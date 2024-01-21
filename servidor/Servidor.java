@@ -1,17 +1,13 @@
-package com.mygdx.appserverencasa;
+package com.mygdx.appserverencasaservidor.red;
 
 public class Servidor {
-
-	private HiloServidor hs;
 	
 	public Servidor() {
-		hs = new HiloServidor();
-		hs.start();
-
-		hs = UtilesRed.hs;
+		UtilesRed.hs = new HiloServidor();
+		UtilesRed.hs.start();
 	}
 	
 	public void cerrarHilo() {
-		hs.fin();//sacar de aca
+		UtilesRed.hs.fin();
 	}
 }
